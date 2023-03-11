@@ -1,0 +1,36 @@
+Nazwiska, imiona, adresy mailowe oraz numery grup członków zespołu:
+    * Damian Muszyński, d.muszynski.acc@gmail.com, 2IZ21A
+
+Temat projektu:
+    * Object XML Mapper (OXM) - Temat nr. 6
+
+Spis technologii, które będą używane (systemów, języków programowania, najważniejszych bibliotek, frameworków, itp.):
+    * IntelliJ IDEA - zintegrowane środowisko programistyczne IDE w jakim będzie implementowana aplikacja.
+    * Git - system kontroli wersji wykorzystwany w projekcie.
+    * Java SE 17 - obiektowy język programowania ogólnego zastosowania.
+    * Maven - narzędzie automatyzujące budowę oprogramowania.
+
+Realistyczny harmonogram pracy wraz z listą funkcjonalności, które zostaną zaimplementowane:
+----------------------------------------------------------------------------------------------------------------------------------------------
+| Data rozpoczęcia | Data zakończenia | Numer etapu projektu |                     Postępy w realizacji projektu                                          |
+ ----------------------------------------------------------------------------------------------------------------------------------------------
+|    25.03.2023    |    01.04.2023    |           2          | Dodanie omówienia dotyczącego odwzorowania pomiędzy językiem Java,a XML |
+|    02.04.2023    |    14.04.2023    |           3          | Dodanie omówienia dotyczącego odwzorowania pomiędzy językiem Java,a XML |
+|    15.04.2023    |    21.04.2023    |           4          | Przygotowanie szkieletu narzędzia do odwzorowania Javy na XML                        |
+|    22.04.2023    |    12.05.2023    |           5          | Implementacja funkcjonalności do odwzorowania obiektów Javy na pliki XML        |
+|    13.05.2023    |    19.05.2023    |           6          | Implementacja funkcjonalności do odwzorowania obiektów Javy na pliki XML        |
+|    20.05.2023    |    02.06.2023    |           7          | Implementacja funkcjonalności do odwzorowania plików XML na obiekty Javy       |
+|    03.06.2023    |    17.06.2023    |           8          | Wprowadzenie poprawek i oddanie pracy                                                                 | 
+ ----------------------------------------------------------------------------------------------------------------------------------------------
+
+Podział pracy w zespole:
+    * Projekt jest realizowany wyłącznie przeze mnie, więc biorę na siebie cały proces realizacji projektu.
+
+Temat projekty z przedmiotu "Programowanie Systemów Rozproszonych":
+    * TSP - algorytmem genetycznym.
+
+Temat pracy inżynierskiej:
+    * Projekt i implementacja aplikacji webowej dla wielobranżowego sklepu internetowego.
+
+Temat pracy magisterskiej:
+    * Propozycja: Analiza projektowania aplikacji e-commerce opartej o architekture mikrousług
