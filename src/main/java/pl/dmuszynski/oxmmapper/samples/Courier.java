@@ -13,8 +13,8 @@ public class Courier extends Person {
     @Node
     private final Vehicle vehicle;
 
-    public Courier(Person person, Vehicle vehicle) {
-        super(person);
+    public Courier(Person p, Vehicle vehicle) {
+        super(p.getAddress(), p.getName(), p.getSurname(), p.getPhone(), p.getDateOfBirth());
         this.vehicle = vehicle;
     }
 }

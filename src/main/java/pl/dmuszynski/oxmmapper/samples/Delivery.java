@@ -1,6 +1,6 @@
 package pl.dmuszynski.oxmmapper.samples;
 
-import lombok.Builder;
+import lombok.*;
 
 import pl.dmuszynski.oxmmapper.tools.annotation.Node;
 import pl.dmuszynski.oxmmapper.tools.annotation.NodeAdapter;
@@ -8,12 +8,27 @@ import pl.dmuszynski.oxmmapper.tools.annotation.NodeAdapter;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Getter
 @Builder
-public record Delivery(
-    @Node List<Shipping> shippingList,
-    @Node Address receiverAddress,
-    @Node Address senderAddress,
-    @Node Courier courier,
-    @NodeAdapter(classType = DateAdapter.class) LocalDateTime shipmentTime,
-    @NodeAdapter(classType = DateAdapter.class) LocalDateTime deliveryTime) {
+@ToString
+@AllArgsConstructor
+@EqualsAndHashCode
+public final class Delivery {
+    @Node
+    private final List<Shipping> shippingList;
+
+    @Node
+    private final Address receiverAddress;
+
+    @Node
+    private final Address senderAddress;
+
+    @Node
+    private final Courier courier;
+
+    @NodeAdapter(classType = DateAdapter.class)
+    private final LocalDateTime shipmentTime;
+
+    @NodeAdapter(classType = DateAdapter.class)
+    private final LocalDateTime deliveryTime;
 }

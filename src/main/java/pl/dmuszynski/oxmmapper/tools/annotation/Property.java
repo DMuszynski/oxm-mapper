@@ -5,8 +5,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
+/**
+ * Adnotacja przechwytująca nazwe pola w klasie
+ */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Property {
-    String name() default "default";
+    String name() default "defaultName";
 }

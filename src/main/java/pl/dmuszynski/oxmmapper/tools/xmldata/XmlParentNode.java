@@ -1,10 +1,18 @@
 package pl.dmuszynski.oxmmapper.tools.xmldata;
 
+import lombok.Getter;
+import lombok.ToString;
+
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+/**
+ * Klasa definiująca opcjonalnego rodzica dla zagnieżdzonych węzłów
+ * Zawiera informacje o ilości zagnieżdzonych węzłów oraz zbiór potomków
+ */
+@Getter
+@ToString(callSuper = true)
 public class XmlParentNode extends XmlNode {
-
     private final int depth;
     private final Set<XmlNode> children;
 
@@ -12,21 +20,5 @@ public class XmlParentNode extends XmlNode {
         super(name, value, parent);
         this.depth = depth;
         this.children = new LinkedHashSet<>();
-    }
-
-    public int getDepth() {
-        return depth;
-    }
-
-    public Set<XmlNode> getChildren() {
-        return children;
-    }
-
-    @Override
-    public String toString() {
-        return "XmlParentNode{" +
-                "depth=" + depth +
-                ", children=" + children +
-                '}';
     }
 }

@@ -1,8 +1,10 @@
 package pl.dmuszynski.oxmmapper.samples;
 
-import lombok.*;
-
-import lombok.experimental.SuperBuilder;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import lombok.Builder;
+import lombok.Getter;
 
 import pl.dmuszynski.oxmmapper.tools.annotation.NodeAdapter;
 import pl.dmuszynski.oxmmapper.tools.annotation.RootNode;
@@ -12,8 +14,8 @@ import pl.dmuszynski.oxmmapper.tools.annotation.Node;
 import java.time.LocalDate;
 
 @Getter
+@Builder
 @ToString
-@SuperBuilder
 @AllArgsConstructor
 @EqualsAndHashCode
 @RootNode
@@ -33,12 +35,4 @@ public class Person {
     @Property
     @NodeAdapter(classType = DateAdapter.class)
     private final LocalDate dateOfBirth;
-
-    public Person(Person person) {
-        this.address = person.getAddress();
-        this.name = person.getName();
-        this.surname = person.surname;
-        this.phone = person.phone;
-        this.dateOfBirth = person.dateOfBirth;
-    }
 }

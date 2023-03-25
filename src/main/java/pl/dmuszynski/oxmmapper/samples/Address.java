@@ -1,14 +1,29 @@
 package pl.dmuszynski.oxmmapper.samples;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import lombok.Getter;
+
+import pl.dmuszynski.oxmmapper.tools.annotation.Node;
 import pl.dmuszynski.oxmmapper.tools.annotation.Property;
 import pl.dmuszynski.oxmmapper.tools.annotation.RootNode;
 
-@Builder
+@Getter
+@ToString
+@AllArgsConstructor
+@EqualsAndHashCode
 @RootNode
-public record Address(
-    @Property int houseNumber,
-    @Property String streetAddress,
-    @Property String city,
-    @Property String zipCode) {
+public class Address {
+    @Node
+    private final int houseNumber;
+
+    @Property
+    private final String streetAddress;
+
+    @Property
+    private final String city;
+
+    @Property
+    private final String zipCode;
 }
