@@ -391,10 +391,7 @@ public class XmlSerializer implements Serializer {
     }
 
     private String generateTagAttribute(XmlProperty attribute) {
-        StringBuilder attributeBuilder = new StringBuilder(attribute.getName());
-        attributeBuilder.append("=").append("\"").append(attribute.getValue()).append("\"");
-
-        return attributeBuilder.toString();
+        return attribute.getName() + "=" + "\"" + attribute.getValue() + "\"";
     }
 
     private String generateXmlTagsForChildren(Set<XmlNode> childrenNodes) {

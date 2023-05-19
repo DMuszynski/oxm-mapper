@@ -25,7 +25,7 @@ public class OxmMapperApplication {
         try {
             XmlConverter xmlConverter = XmlConverter.load(Delivery.class);
             Serializer xmlSerializer = xmlConverter.serializer();
-            xmlSerializer.serialize(delivery, "C:\\Users\\dmusz\\OneDrive\\Pulpit");
+            xmlSerializer.serialize(delivery, "src/main/resources/xml");
         } catch (InvalidXmlContextException e) {
             log.error(e.getLocalizedMessage(), e);
         }
