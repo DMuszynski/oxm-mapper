@@ -15,7 +15,7 @@ import pl.dmuszynski.oxmmapper.tools.annotation.RootNode;
 @EqualsAndHashCode
 @RootNode
 public class Address {
-    @Node
+    @Property
     private final int houseNumber;
     @Property
     private final String streetAddress;
