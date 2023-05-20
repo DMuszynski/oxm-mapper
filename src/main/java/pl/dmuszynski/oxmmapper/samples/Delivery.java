@@ -16,19 +16,15 @@ import java.util.List;
 public final class Delivery {
     @Node
     private final List<Shipping> shippingList;
-
     @Node
     private final Address receiverAddress;
-
     @Node
     private final Address senderAddress;
-
     @Node
     private final Courier courier;
 
     @NodeAdapter(classType = DateAdapter.class)
     private final LocalDateTime shipmentTime;
-
     @NodeAdapter(classType = DateAdapter.class)
     private final LocalDateTime deliveryTime;
 }

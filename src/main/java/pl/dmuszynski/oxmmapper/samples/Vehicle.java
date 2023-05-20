@@ -16,10 +16,8 @@ import pl.dmuszynski.oxmmapper.tools.annotation.RootNode;
 public class Vehicle {
     @Property
     private final String model;
-
     @Property
     private final String brand;
-
     @Property
     private final String licenseNumber;
 }

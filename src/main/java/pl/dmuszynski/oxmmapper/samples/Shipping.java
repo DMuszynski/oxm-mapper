@@ -16,10 +16,8 @@ import pl.dmuszynski.oxmmapper.tools.annotation.RootNode;
 public class Shipping {
     @Property
     private final String number;
-
     @Property
     private final String shippingType;
-
     @Property
     private final String wrappingType;
 }
