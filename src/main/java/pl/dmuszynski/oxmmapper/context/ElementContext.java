@@ -31,7 +31,7 @@ public class ElementContext implements Context<ElementData> {
     private final Map<String, Field> nodes;
     private final Map<String, Field> attributes;
     private final Map<Field, Class<? extends XmlAdapter<?, ?>>> nodeAdapters;
-    private final Map<Field, Class<?>> managedReferences;
+    private final Map<Field, Class<?>> mapReferences;
     private final Map<Class<?>, Context<ElementData>> subContexts;
     private final Set<ElementData> data;
 
@@ -44,7 +44,7 @@ public class ElementContext implements Context<ElementData> {
         this.nodes = loadNodes();
         this.attributes = loadNodeAttributes();
         this.nodeAdapters = loadNodesAdapters();
-        this.managedReferences = loadManagedReferences();
+        this.mapReferences = loadMapRef();
         this.subContexts = loadSubContexts();
         this.data = buildData();
     }
@@ -169,8 +169,8 @@ public class ElementContext implements Context<ElementData> {
         return field.getAnnotation(NodeAdapter.class).classType();
     }
 
-    private Map<Field, Class<?>> loadManagedReferences() {
-        return getFieldsByAnnotation(NodeManagedReference.class).stream()
+    private Map<Field, Class<?>> loadMapRef() {
+        return getFieldsByAnnotation(NodeMapRef.class).stream()
                 .map(field -> Map.entry(field, clazz))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (type1, type2) -> type1, LinkedHashMap::new));
     }
@@ -226,7 +226,7 @@ public class ElementContext implements Context<ElementData> {
     private boolean isManagedReference(Field field) {
         Class<?> type = getFieldType(field);
 
-        return getParentManagedReferences().stream()
+        return getParentMapReferences().stream()
                 .anyMatch(managedReference -> managedReference.equals(type));
     }
 
@@ -242,7 +242,7 @@ public class ElementContext implements Context<ElementData> {
     }
 
     private Map<Class<?>, Context<ElementData>> loadSubContexts() {
-        Collection<Class<?>> parentManagedReferences = getParentManagedReferences();
+        Collection<Class<?>> parentManagedReferences = getParentMapReferences();
         Map<Class<?>, Context<ElementData>> contexts = new HashMap<>();
 
         findComplexTypeFields().stream()
@@ -258,9 +258,9 @@ public class ElementContext implements Context<ElementData> {
         return contexts;
     }
 
-    private Collection<Class<?>> getParentManagedReferences() {
+    private Collection<Class<?>> getParentMapReferences() {
         return Optional.ofNullable(parentContext)
-                .map(ctx -> ((ElementContext) ctx).getManagedReferences().values())
+                .map(ctx -> ((ElementContext) ctx).getMapReferences().values())
                 .orElseGet(HashSet::new);
     }
 
@@ -333,8 +333,8 @@ public class ElementContext implements Context<ElementData> {
         return nodeAdapters;
     }
 
-    public Map<Field, Class<?>> getManagedReferences() {
-        return managedReferences;
+    public Map<Field, Class<?>> getMapReferences() {
+        return mapReferences;
     }
 
     @Override

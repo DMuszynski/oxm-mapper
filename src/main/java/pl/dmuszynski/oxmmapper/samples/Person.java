@@ -22,13 +22,10 @@ import java.time.LocalDate;
 public class Person {
     @Node
     private final Address address;
-
     @Property
     private final String name;
-
     @Property
     private final String surname;
-
     @Property
     private final String phone;
 

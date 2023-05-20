@@ -17,13 +17,10 @@ import pl.dmuszynski.oxmmapper.tools.annotation.RootNode;
 public class Address {
     @Node
     private final int houseNumber;
-
     @Property
     private final String streetAddress;
-
     @Property
     private final String city;
-
     @Property
     private final String zipCode;
 }
